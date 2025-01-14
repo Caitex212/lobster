@@ -5,9 +5,9 @@ LOBSTER_VERSION="4.3.4"
 ### General Variables ###
 config_file="$HOME/.config/lobster/lobster_config.sh"
 lobster_editor=${VISUAL:-${EDITOR}}
-tmp_dir="${TMPDIR:-/tmp}/lobster" && mkdir -p "$tmp_dir"
-lobster_socket="${TMPDIR:-/tmp}/lobster.sock" # Used by mpv (check the play_video function)
-lobster_logfile="${TMPDIR:-/tmp}/lobster.log"
+tmp_dir="/tmp/lobster" && mkdir -p "$tmp_dir"
+lobster_socket="/tmp/lobster.sock" # Used by mpv (check the play_video function)
+lobster_logfile="/tmp/lobster.log"
 applications="$HOME/.local/share/applications/lobster" # Used for external menus (for now just rofi)
 images_cache_dir="$tmp_dir/lobster-images"             # Used for storing downloaded images of movie covers
 
@@ -34,7 +34,7 @@ command -v "hxunent" >/dev/null 2>&1 && hxunent="hxunent" || hxunent="tee /dev/n
 # Note: experimental feature
 presence_client_id="1239340948048187472" # Discord Client ID
 # shellcheck disable=SC2154
-discord_ipc="${XDG_RUNTIME_DIR}/discord-ipc-0" # Discord IPC Socket (Could also be discord-ipc-1 if using arRPC afaik)
+discord_ipc="/tmp/discord-ipc-0" # Discord IPC Socket (Could also be discord-ipc-1 if using arRPC afaik)
 handshook="$tmp_dir/handshook"                 # Indicates if the RPC handshake has been done
 ipclog="$tmp_dir/ipclog"                       # Logs the RPC events
 presence="$tmp_dir/presence"                   # Used by the rich presence function
